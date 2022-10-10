@@ -1,0 +1,3 @@
+usr/lib/*/*.la
+#usr/bin/dap-config
+#usr/share/man/man1/dap-config.1

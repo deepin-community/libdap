@@ -1,0 +1,9 @@
+This package includes patches that are managed under 'quilt', so  'dpkg-source -x' is not sufficient to get a complete
+build. To get the actual source, do:
+ $ dpkg-source -x
+ $ ./debian/rules patch
+
+
+Regards
+Alastair McKinstry, 2009-09-13
+ 

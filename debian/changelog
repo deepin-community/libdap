@@ -1,0 +1,579 @@
+libdap (3.20.9-1) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 18 May 2022 22:15:29 -0400
+
+libdap (3.20.9-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 31 Dec 2021 21:02:20 +0000
+
+libdap (3.20.8-2) unstable; urgency=medium
+
+  * Ship dap-config, drop libdap-dev multi-arch, as it breaks
+    gdal. Closes: #995325
+  * Change d/tests/control to use pkg-config rather than dap-config
+  * Acl we build with libtirpc-dev. Closes: #993016
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 30 Sep 2021 08:47:12 +0100
+
+libdap (3.20.8-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop dap-config.patch
+  * No longer ship dap-config. Closes: #994670
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 21 Sep 2021 12:55:59 +0100
+
+libdap (3.20.7-7) unstable; urgency=medium
+
+  * Standards-Version: 4.6.0
+  * Patch from Aurelian Jarno for tirpc support. Closes: #993016
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 31 Aug 2021 11:24:50 +0100
+
+libdap (3.20.7-6) unstable; urgency=medium
+
+  [ Bas Couewnberg ]
+  * Team upload.
+  * Move usr/bin/dap-config* back to libdap-dev.
+    (closes: #981725)
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 05 Feb 2021 10:42:06 +0000
+
+libdap (3.20.7-5) unstable; urgency=medium
+
+  * Revert dap-config to libdap-dev. Closes: #981725
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 04 Feb 2021 13:13:25 +0000
+
+libdap (3.20.7-4) unstable; urgency=medium
+
+  * Update dependencies on autopkgtests to libdap-bin
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 03 Feb 2021 12:27:57 +0000
+
+libdap (3.20.7-3) unstable; urgency=medium
+
+  * Add Breaks/Replaces libdap-bin on libdap-dev. for dap-config, which
+    moves pkg.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 02 Feb 2021 09:31:49 +0000
+
+libdap (3.20.7-2) unstable; urgency=medium
+
+  * Move to unstable
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 02 Feb 2021 07:31:30 +0000
+
+libdap (3.20.7-1) experimental; urgency=medium
+
+  * New upstream release
+  * SOVERSION change: libdap25 -> libdap27
+  * Switch from SunRPC to TI RPC implementation. Closes: #968735
+  * Move branches to DEP-14, point Vcs-Git to debian/latest
+  * Change d/gbp.conf to point to DEP-14 branches
+  * Mark autokpgtests superficial for now. Closes: #974485
+  * Move to debhelper level 13
+  * Standards-Version: 4.5.1; no changes required
+  * Drop obsolete breaks/replaces for pkgs prior to stable
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 05 Jan 2021 06:56:54 +0000
+
+libdap (3.20.6-3) unstable; urgency=medium
+
+  * Fix FTBFS: col utility now moved to bsdextrautils pkg. Build-Depend on it.
+    Closes: #963349
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 22 Jun 2020 07:52:29 +0100
+
+libdap (3.20.6-2) unstable; urgency=medium
+
+  * Test depends on libdap-dev. Closes: #959737
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 17 May 2020 10:42:27 +0100
+
+libdap (3.20.6-1) unstable; urgency=medium
+
+  * New upstream release
+  * Minor version changes:
+    libdap: 25.2.2 -> 25.2.3
+  * Add autopkgtest tests 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 25 Apr 2020 11:32:30 +0100
+
+libdap (3.20.5-1) unstable; urgency=medium
+
+  * New upstream release
+  * Use debhelper-compat (=12)
+  * Standards-Version: 4.5.0
+  * Add debian/gdb.conf file
+  * Fix DEP-5 syntax error in d/copyright
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 17 Feb 2020 08:57:25 +0000
+
+libdap (3.20.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * Minor version changes:
+    libdapclient: 6.1.10 -> 6.1.11
+    libdapserver: 7.6.10 -> 7.6.11
+    libdap: 25.2.1 -> 25.2.2
+  * Standards-Version: 4.4.0
+  * Debhelper 12 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 15 Jul 2019 10:15:29 +0100
+
+libdap (3.20.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * Standards-Version: 4.3.0
+  * Minor Version changes:
+    libdapclient: 6.1.9 -> 6.1.10
+    libdapserver: 7.6.9 -> 7.6.10
+    libdap: 25.2.0 -> 25.2.1
+  * Remove obsolete patches:
+    - disable-docs.patch
+    - xml_libs.patch
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 26 Feb 2019 05:47:36 +0000
+
+libdap (3.20.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Minor version change:
+    libdap: 25.1.1 -> 25.2.0
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 08 Dec 2018 15:13:32 +0000
+
+libdap (3.20.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Minor version changes:
+    libdapclient : 6.1.8 -> 6.1.9
+    libdap: 25.1.0 -> 25.1.1
+    libdapserver: 7.6.8 -> 7.6.9
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 22 Nov 2018 09:05:12 +0000
+
+libdap (3.20.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Minor version changes:
+    libdapclient : 6.1.7 -> 6.1.8
+    libdap: 25.0.1 -> 25.1.0
+    libdapserver: 7.6.7 -> 7.6.8
+  * Standards-Version: 4.2.1
+  * Drop hardcoded xz compression in options
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 30 Sep 2018 12:04:23 +0100
+
+libdap (3.19.1-3) UNRELEASED; urgency=medium
+
+  * Use correct machine-readable copyright file URI.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 10 Sep 2018 22:15:22 +0100
+
+
+libdap (3.19.1-2) unstable; urgency=medium
+
+  * Change VCS to point to salsa.debian.org
+  * Standards-Version: 4.1.3
+  * Add libdap-doc.docs to install docs. Closes: #889210
+  * Drop description reference to external docs. Closes: #837429
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 03 Feb 2018 12:35:34 +0000
+
+libdap (3.19.1-1) unstable; urgency=medium
+
+  * New upstream release 3.19.1
+    - refresh unique_ptr.ptch
+  * Minor version changes:
+    libdap: 25.0.0 -> 25.0.1
+    libdapclient : 6.1.6 -> 6.1.7
+    libdapserver: 7.6.6 -> 7.6.7
+  * Standards-Version: 4.1.1
+  * Drop dependencies on autotools; automatic in debhelper 10
+  * Run test suite, but ignore test failures this build
+  * docs are now in html/ directory. Change rules and install file
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 03 Oct 2017 09:31:43 +0100
+
+libdap (3.19.0-1) unstable; urgency=medium
+
+  * New upstream release
+      libdap.so.23.1.1 -> libdap.so.25.0.0
+  * Disable unit tests for the moment as input files missing
+  * Standards-Version: 4.0.0. No changes required
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 21 Jun 2017 13:40:42 +0100
+
+libdap (3.18.3-3) unstable; urgency=medium
+
+  * push to unstable
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 19 Jun 2017 07:17:57 +0100
+
+libdap (3.18.3-2) experimental; urgency=medium
+
+  * Don't disable PIE. Closes: #859411
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 11 Apr 2017 10:01:54 +0100
+
+libdap (3.18.3-1) experimental; urgency=medium
+
+  * New upstream release:
+      libdapclient.so.6.1.6 -> libdap.so.6.1.6
+      libdapserver.so.7.6.5 -> libdapserver.so.7.6.6
+      libdap.so.23.1.0 -> libdap.so.23.1.1
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 20 Feb 2017 12:45:00 +0000
+
+libdap (3.18.2-2) unstable; urgency=medium
+
+  * Add a B-D on libfl-dev as this no longer supplied with flex.
+    Closes: #846434
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 02 Dec 2016 09:53:20 +0000
+
+libdap (3.18.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update minor library numbers:
+     libdap.so.23.0.0 -> libdap.so.23.1.0
+     libdapclient.so.6.1.4 -> libdap.so.6.1.5
+     libdapserver.so.7.6.4 -> libdapserver.so.7.6.5
+  * Set libdap-doc as Multi-Arch: foreign
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 04 Nov 2016 01:26:00 +0000
+
+libdap (3.18.1-2) unstable; urgency=medium
+
+  * add patch for auto_ptr (deprecated) -> unique_ptr
+  * Disable D4FilterClauseTest, which FTBFS on several archs. Clozes: #836186
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 31 Oct 2016 14:57:21 +0000
+
+libdap (3.18.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update watch file
+  * Move to debhelper 10.
+  * Include URI license in debian/copyright, specify which files it
+    applies to.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 30 Sep 2016 06:12:58 +0100
+
+libdap (3.18.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * soversion (and lib package name) change: libdap17v5 -> libdap23
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 29 Aug 2016 17:13:48 +0100
+
+libdap (3.15.1-8) unstable; urgency=medium
+
+  * Fix for G++ 6 FTBFS. Closes: #831191.
+  * Standards-Version: 3.9.8. No changes required
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 15 Jul 2016 10:25:23 +0100
+libdap (3.15.1-8) unstable; urgency=medium
+
+  * Fix for G++ 6 FTBFS.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 15 Feb 2016 20:25:23 +0000
+
+libdap (3.15.1-7) unstable; urgency=medium
+
+  * Disable more networ, tests. Closes: #809580.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 05 Feb 2016 16:21:36 +0000
+
+libdap (3.15.1-6) unstable; urgency=medium
+
+  * Disable network tests. Closes: #809580.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 01 Jan 2016 21:55:57 +0000
+
+libdap (3.15.1-5) unstable; urgency=medium
+
+  * Fix FTBFS on arch-independent builds. Closes: #806057
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 25 Nov 2015 08:23:26 +0000
+
+libdap (3.15.1-4) unstable; urgency=medium
+
+  * Also disable D4* unit tests
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 08 Nov 2015 11:49:21 +0000
+
+libdap (3.15.1-3) unstable; urgency=medium
+
+  * Further fix to DMRTESTSUITE Makefile needed
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 07 Nov 2015 22:47:32 +0000
+
+libdap (3.15.1-2) unstable; urgency=medium
+
+  * Disable DMR tests which still break on big-endian hw. (Upstream informed)
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 04 Nov 2015 14:05:52 +0000
+
+libdap (3.15.1-1) experimental; urgency=medium
+
+  * New upstream release
+    - libdap moves from 17.1.0 -> 17.3.1, 
+    - libdapclient : 6.1.0 -> 6.1.1
+    - libdapserver: 7.3.0 -> 7.3.1
+  * Disable HTTPCacheTest,RCReaderTest as website appears to be down
+  * Re-enable docs now that doxygen available.
+  * Remove obsolete patches from debian/patches directory.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 17 Oct 2015 03:41:45 +0100
+
+libdap (3.14.0-4) unstable; urgency=medium
+
+  * Move to unstable for g++5 transition. Closes: #793251
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 14 Aug 2015 07:56:59 +0100
+
+libdap (3.14.0-3~exp2) experimental; urgency=medium
+
+  * Add cxxtest, cxxtest, libcppunit-dev for unit tests
+  * Add XML2_LIBS to unit-tests/Makefile.am to build tests
+  * Fix copyrights, move to DEP-5. Closes: #792536.
+  * Add Breaks/Replaces for transition. Closes: #79568.
+  * Fix links in debian/rules
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 24 Jul 2015 07:42:46 +0100
+
+libdap (3.14.0-3~exp1) experimental; urgency=medium
+
+  * Transition to g++5: Build against g++-5; 
+    * libdap17 -> libdap7v5 
+    * libdapclient6 -> libdapclient6v5
+    * libdapserver7 -> libdapserver7v5
+  * Re-enable tests. This is known to break on big-endian archs at the moment
+    [Bug forwarded to upstream]
+  * Add --enable-runtime-endian-check 
+  * Temporarily remove docs build with doxygen as doxygen not in experimental
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 09 Jul 2015 15:38:36 +0100
+
+libdap (3.14.0-2) unstable; urgency=medium
+
+  * Change Vcs-Git URL to anonscm.debian.org form 
+  * Temporarily disable tests to allow libdap proceed to testing.
+    3.14.0 added a new feature DMR that fails on big-endian platforms
+    This is being worked on with upstream, but it is a blocker for netCDF /GCC
+    transitions. So the test is being disabled for the moment.
+    Closes: #790863.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 28 Jun 2015 11:37:32 +0100
+
+libdap (3.14.0-1) unstable; urgency=medium
+
+  * New upstream release. New SOVERSIONS and package names:
+    libdapclient3 -> libdapclient6
+    libdap11 -> libdap17
+  * Remove obsolete break/conflicts rules
+  * Move to Standards-Version: 3.9.6
+  * Use 'xz' compression
+  * Refreshed patches; re-enabled all tests for the moment
+  * Add B-D for libpth-dev, libssl-dev 
+  * hack for Makefile/dependency bug needed in debian/rules; try to make
+    twice.
+  * Add Vcs-Git to debian-science.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 21 Jun 2015 14:02:43 +0100
+
+libdap (3.12.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - No longer need curl-types-remove.patch 
+  * Add debian/watch file.
+  * Fix typo in hardening flags; Change  to =all,-pie ; 
+    Use DEB_LDFLAGS_MAINT_APPEND. Closes: #697387.
+  * Enable parallel build. Closes: #723938.
+  * Depend on libcurl4-gnutls-dev | libcurl-dev. Closes: #722701.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 17 Oct 2013 22:12:11 +0100
+
+libdap (3.11.1-15) unstable; urgency=low
+
+  * Avoid exit 1 in conditional in ./rules by adding echo. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 10 Jul 2013 09:24:27 +0100
+
+libdap (3.11.1-14) unstable; urgency=low
+
+  * Make use of libjs-jquery conditional; not always present. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 09 Jul 2013 05:01:07 +0100
+
+libdap (3.11.1-13) unstable; urgency=low
+
+  * Now use debhelper >=9 versioned depends.
+  * Now use libjs-jquery rather than embedded copy.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 08 Jul 2013 11:52:44 +0100
+
+libdap (3.11.1-12) unstable; urgency=low
+
+  * libdnet-dev no longer conflicts with libdap-dev. Closes: #694655. 
+  * Standards-Version: 3.9.4. No changes required.
+  * Enable hardening. Only some false alarms on unprotected fns left.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 21 Dec 2012 09:20:52 +0000
+
+libdap (3.11.1-11) unstable; urgency=low
+
+  * Fix for gcc-4.7, which is stricter on including prototypes.
+    Closes: #672008 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 08 May 2012 17:15:36 +0100
+
+libdap (3.11.1-10) unstable; urgency=low
+
+  * Switch to dh_autoreconf --as-needed for ltmain-as-needed instead of
+    patching manually. Thanks to Iain Lane. Closes: #651285.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 07 Dec 2011 12:59:35 +0000
+
+libdap (3.11.1-9) unstable; urgency=low
+
+  * Rewrite dap-config to call pkg-config, to work correctly with 
+    Multiarch. Now depend rather than recommend pkg-config.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 15 Sep 2011 05:16:35 +0100
+
+libdap (3.11.1-8) unstable; urgency=low
+
+  * Remove unnecessary ${shlibs:Depends} from -dev package.
+  * Add -Wl,--as-needed to remove unneeded dependencies 
+  * Multi-Arch enabled. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 13 Sep 2011 18:47:11 +0100
+
+libdap (3.11.1-7) unstable; urgency=low
+
+  * Fix dependencies of libdap-dev. Add Dependency on uuid-dev. Closes: #640260.
+  * Fix missing dependency in libdapclient.pc 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 05 Sep 2011 16:40:31 +0100
+
+libdap (3.11.1-6) unstable; urgency=low
+
+  * libdap-dev: Add dependencies on libdapserver, libdapclient.
+    Closes: #640226.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 03 Sep 2011 16:02:44 +0100
+
+libdap (3.11.1-5) unstable; urgency=low
+
+  * Really upload to unstable!.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 01 Sep 2011 14:29:33 +0100
+
+libdap (3.11.1-4) experimental; urgency=low
+
+  * Upload to unstable. Closes: #639992. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 01 Sep 2011 13:55:41 +0100
+
+libdap (3.11.1-3) experimental; urgency=low
+
+  * Uploato unstable; for libdapcient10, libdapserver7, change
+    Conflicts: to Breaks,add Replaces: libdap10
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 26 Aug 2011 05:58:06 +0100
+
+libdap (3.11.1-2) experimental; urgency=low
+
+  * Incompatible library change libdap.so.10 becomes libdap.so.11.
+    As the libraries within it are not changing SONAMES in sync, libdap10
+   has been split into libdap11, libdapclient3, libdapserver7. Closes: #638294. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Fri, 19 Aug 2011 16:45:44 +0100
+
+libdap (3.11.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * SONAME bump as libdap::AISConnect symbol dropped. Closes: #638022.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 16 Aug 2011 23:00:06 +0100
+
+libdap (3.10.2-2) unstable; urgency=low
+
+  * New B-D uuid-dev. Closes: #637760. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 13 Aug 2011 11:26:01 +0100
+
+libdap (3.10.2-1) unstable; urgency=low
+
+  * New upstream release. Closes: #575090.
+    Removed patches: gcc44.patch
+    Build-Depend on flex, bison now needed.
+  * Standards-Version: 3.9.3. No changes required.
+  * Remove <curl/types.h> from HTTPConnect.h; deprecated and breaks
+    other packages. Closes: #637682.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sat, 13 Aug 2011 20:01:04 +0100
+
+libdap (3.9.3-6) unstable; urgency=low
+
+  * Acknowledge NMU with Thanks. Closes: #575894.
+  * Supply dap-config in -dev package. Closes: #576809.
+  * Standards-Version now 3.8.4. No changes required. 
+  * Moved to source format 3.0, removed quilt dependency.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Wed, 07 Apr 2010 20:44:03 +0100
+
+libdap (3.9.3-5.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fixed debian/copyright: OpenNDAP is LGPL 2.1 not GPL-2 as stated 
+    in that file.
+    (closes: #575894)
+  * Added minimal version to quilt build-dep to make lintian happy.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Sat, 03 Apr 2010 23:34:07 +0200
+
+libdap (3.9.3-5) unstable; urgency=low
+
+  * Fix build rule to enable quilt patches. Closes: #547178. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 19 Oct 2009 15:23:33 +0100
+
+libdap (3.9.3-4) unstable; urgency=low
+
+  * libtool now needed in Build-Depends. Closes: #550024.		 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 13 Oct 2009 14:51:29 +0100
+
+libdap (3.9.3-3) unstable; urgency=low
+
+  * Delete out-of-date config.sub, config.guess and autoreconf on build.
+    Closes: #548927. 
+  * Patch from Martin MichlMayer to fix FTBFS with g++-4.4. Closes: #547178.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 06 Oct 2009 17:09:46 +0100
+
+libdap (3.9.3-2) unstable; urgency=low
+
+  * Confllict: libdap-dev and libdnet-dev, as they have an identical lib.
+    Closes: #544388.
+  * Added libxml2-dev, libcurl4-gnutls-dev to Depends: libdap-dev, for 
+    building static library with libdap.pc
+  * Acknowledge OPeNDAP, Inc. in debian/copyright.
+  * Add README.source
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 13 Sep 2009 17:27:57 +0100
+
+libdap (3.9.3-1) unstable; urgency=low
+
+  * Initial release. (Closes: #541074).
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 11 Aug 2009 14:09:39 +0100

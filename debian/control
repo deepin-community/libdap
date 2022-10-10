@@ -1,0 +1,118 @@
+Source: libdap
+Section: utils
+Priority: optional
+Maintainer: Alastair McKinstry <mckinstry@debian.org>
+Build-Depends: zlib1g-dev, 
+ debhelper-compat (= 13), 
+ pkg-config, 
+ libxml2-dev, 
+ libcurl4-gnutls-dev | libcurl-dev, 
+ libtirpc-dev,
+ libcppunit-dev, 
+ cxxtest, 
+ doxygen,
+ dejagnu, 
+ graphviz,
+ bison, 
+ bsdextrautils,
+ uuid-dev, 
+ libjs-jquery, 
+ libpth-dev, 
+ libssl-dev,
+ libfl-dev
+Build-Conflicts: autoconf2.13
+Standards-Version: 4.6.0
+Homepage: https://www.opendap.org/
+Vcs-Browser: https://salsa.debian.org:/science-team/libdap.git
+Vcs-Git: https://salsa.debian.org:/science-team/libdap.git -b debian/latest
+
+Package: libdap27
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Open-source Project for a Network Data Access Protocol library
+ OPeNDAP provides software that allows you to access data over the internet,
+ from programs that weren't originally designed for that purpose, as well 
+ as some that were. While OPeNDAP is the original developer of the Data Access
+ protocol which its software uses, many other groups have adopted DAP
+ and provide compatible clients, servers and software development kits. 
+ .
+ With OPeNDAP software, you access data using a URL, just like a URL you
+ would use to access a web page. However, before you request any data, 
+ you need to know how to request it in a form your browser can handle. 
+ OPeNDAP data is stored in binary form, and by default, it is 
+ transmitted that way, too. 
+
+Package: libdapclient6v5
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:  libdap27 ( = ${binary:Version} ), ${misc:Depends}, ${shlibs:Depends}
+Description: Client library for the Network Data Access Protocol
+ OPeNDAP provides software that allows you to access data over the internet,
+ from programs that weren't originally designed for that purpose, as well
+ as some that were. While OPeNDAP is the original developer of the Data Access
+ protocol which its software uses, many other groups have adopted DAP
+ and provide compatible clients, servers and software development kits.
+ .
+ This package provides the client library libdapclient6.
+
+Package: libdapserver7v5
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:  libdap27 ( = ${binary:Version} ), ${misc:Depends}, ${shlibs:Depends}
+Description: Server library for the Network Data Access Protocol
+ OPeNDAP provides software that allows you to access data over the internet,
+ from programs that weren't originally designed for that purpose, as well
+ as some that were. While OPeNDAP is the original developer of the Data Access
+ protocol which its software uses, many other groups have adopted DAP
+ and provide compatible clients, servers and software development kits.
+ .
+ This package provides the server library libdapserver7
+
+
+Package: libdap-bin
+Architecture: any
+Multi-Arch: foreign
+Depends: libdapclient6v5 ( = ${binary:Version} ),  ${misc:Depends}, ${shlibs:Depends}
+Description: Binaries for the  libdap Data Access Protocol library
+ OPeNDAP provides software that allows you to access data over the internet,
+ from programs that weren't originally designed for that purpose, as well
+ as some that were. While OPeNDAP is the original developer of the Data Access
+ protocol which its software uses, many other groups have adopted DAP
+ and provide compatible clients, servers and software development kits.
+ .
+ This package contains the 'getdap' client binary.
+
+Package: libdap-dev
+Section: libdevel
+Architecture: any
+Depends: libdap27 ( = ${binary:Version} ), libdapserver7v5 (=${binary:Version}), libdapclient6v5 (=${binary:Version}) , ${misc:Depends}, libxml2-dev, libcurl4-gnutls-dev | libcurl-dev, uuid-dev, pkg-config, libtirpc-dev
+Breaks: libdap-bin (<< 3.20.7-6~)
+Replaces: libdap-bin (<< 3.20.7-6~)
+Description: Development files (headers and static libraries) for libdap
+ OPeNDAP provides software that allows you to access data over the internet,
+ from programs that weren't originally designed for that purpose, as well
+ as some that were. While OPeNDAP is the original developer of the Data Access
+ protocol which its software uses, many other groups have adopted DAP
+ and provide compatible clients, servers and software development kits.
+ .
+ This package contains header files, pkgconfig files and static libraries
+ for DAP.
+
+Package: libdap-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, libjs-jquery
+Description: Documentation for the libdap Data Access Protocol library
+ OPeNDAP provides software that allows you to access data over the internet,
+ from programs that weren't originally designed for that purpose, as well
+ as some that were. While OPeNDAP is the original developer of the Data Access
+ protocol which its software uses, many other groups have adopted DAP
+ and provide compatible clients, servers and software development kits.

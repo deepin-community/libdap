@@ -1,0 +1,8 @@
+usr/bin/dap-config-pkgconfig
+usr/lib/*/pkgconfig/*.pc
+usr/lib/*/*.so
+usr/lib/*/*.a
+usr/share/aclocal/libdap.m4
+usr/include/libdap/*
+usr/bin/dap-config
+usr/share/man/man1/dap-config.1

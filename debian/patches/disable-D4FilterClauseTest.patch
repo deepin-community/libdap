@@ -1,0 +1,19 @@
+Author: Alastair McKinstry <mckinstry@debian.org>
+Description: Disable, D4FilterClauseTest, which hangs on several archs
+Last-Updated: 2016-10-31
+Bug-Origin: https://bugs.debian.org/836187
+Forwarded: no
+
+Index: libdap-3.20.0/unit-tests/Makefile.am
+===================================================================
+--- libdap-3.20.0.orig/unit-tests/Makefile.am
++++ libdap-3.20.0/unit-tests/Makefile.am
+@@ -87,7 +87,7 @@ UNIT_TESTS = marshT arrayT attrTableT st
+ if DAP4_DEFINED
+ UNIT_TESTS += D4MarshallerTest D4UnMarshallerTest D4DimensionsTest \
+ 	D4EnumDefsTest D4GroupTest D4ParserSax2Test D4AttributesTest D4EnumTest \
+-	chunked_iostream_test D4AsyncDocTest DMRTest D4FilterClauseTest \
++	chunked_iostream_test D4AsyncDocTest DMRTest  \
+ 	D4SequenceTest DmrRoundTripTest DmrToDap2Test
+ endif
+ 

@@ -1,0 +1,18 @@
+Test-Command: set -e
+  ; pkg-config libdap
+Depends: libdap-dev, pkg-config
+
+Test-Command: set -e
+  ; pkg-config libdapclient 
+Depends: libdap-dev, pkg-config
+
+Test-Command: set -e
+  ; pkg-config libdapserver
+Depends: libdap-dev, pkg-config
+
+# No args; just check linking ok
+Test-Command: set -e
+  ; getdap -V 2> /dev/null
+Depends: libdap-bin
+Restrictions: superficial
+

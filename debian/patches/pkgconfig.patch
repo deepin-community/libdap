@@ -1,0 +1,17 @@
+Author: Alastair McKinstry <mckinstry@debian.org>
+Description: Fix missing depends 
+Last-Updated: 2011-09-05
+Forwarded: no
+
+Index: libdap-3.20.0/libdapclient.pc.in
+===================================================================
+--- libdap-3.20.0.orig/libdapclient.pc.in
++++ libdap-3.20.0/libdapclient.pc.in
+@@ -11,6 +11,6 @@ Version: @VERSION@
+ Requires: libdap
+ Libs: -L${libdir} -ldapclient
+ Libs.private: @curlprivatelibs@
+-Requires.private: @curlprivatereq@
++Requires.private: @curlprivatereq@, uuid
+ Cflags: -I${includedir}/libdap
+ 

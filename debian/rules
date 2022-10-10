@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+ARCH:=$(shell dpkg --print-architecture)
+LIBDIR:=/usr/lib/$(DEB_HOST_MULTIARCH)
+
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+CFLAGS += -Wall -pedantic
+
+CXXFLAGS:= $(shell dpkg-buildflags --get CXXFLAGS) -std=c++14
+export CXXFLAGS
+
+export DO_TEST=true
+export DH_VERBOSE=1
+
+# The magic debhelper rule:
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-gnu-ld --enable-runtime-endian-check=yes
+
+override_dh_auto_test:
+	$(DO_TEST) && dh_auto_test || echo "Ignoring test failures"
+
+override_dh_auto_build:
+	dh_auto_build
+	$(MAKE) docs
+
+override_dh_installdocs:
+	dh_installdocs
+	[ -f debian/libdap-doc/usr/share/doc/libdap-doc/html/jquery.js ] && ( \
+		rm debian/libdap-doc/usr/share/doc/libdap-doc/html/jquery.js ; \
+		ln -sf /usr/share/javascript/jquery/jquery.js debian/libdap-doc/usr/share/doc/libdap-doc/html/jquery.js ) \
+		|| echo "Skipped; no jquery"
+	-find debian/libdap-doc -name '*.md5' -delete \;
+
+clean:
+	dh clean
+	rm -rf html doxygen_warnings.txt

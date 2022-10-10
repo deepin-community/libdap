@@ -1,0 +1,6 @@
+unique_ptr.patch
+pkgconfig.patch
+disable-cache-test.patch
+disable-dmr-tests.patch
+disable-net-tests.patch
+disable-D4FilterClauseTest.patch

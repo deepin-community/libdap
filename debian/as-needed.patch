@@ -1,0 +1,38 @@
+Author: Alastair McKinstry <mckinstry@debian.org>
+Description: Patch to ensure -Wl,--as-needed is NOT reordered by libtool.
+ Note that this patch is applied by ./debian/rules AFTER autoreconf is run; 
+ it cannot be applied in ./debian/patches
+Bug-Debian: http://bugs.debian.org/347650
+Last-Updated: 2011-09-13
+Forwarded: no
+
+--- ltmain.sh.orig	2011-09-13 10:05:45.000000000 +0100
++++ ltmain.sh 	        2011-09-13 10:22:40.000000000 +0100
+@@ -5500,6 +5500,11 @@
+ 	continue
+ 	;;
+ 
++      -Wl,--as-needed)
++        deplibs="$deplibs $arg"
++        continue
++        ;;
++      
+       -export-symbols | -export-symbols-regex)
+ 	if test -n "$export_symbols" || test -n "$export_symbols_regex"; then
+ 	  func_fatal_error "more than one -exported-symbols argument is not allowed"
+@@ -6150,6 +6155,15 @@
+ 	lib=
+ 	found=no
+ 	case $deplib in
++       -Wl,--as-needed)
++         if test "$linkmode,$pass" = "prog,link"; then
++           compile_deplibs="$deplib $compile_deplibs"
++           finalize_deplibs="$deplib $finalize_deplibs"
++         else
++           deplibs="$deplib $deplibs"
++         fi
++         continue
++         ;;
+ 	-mt|-mthreads|-kthread|-Kthread|-pthread|-pthreads|--thread-safe|-threads)
+ 	  if test "$linkmode,$pass" = "prog,link"; then
+ 	    compile_deplibs="$deplib $compile_deplibs"
